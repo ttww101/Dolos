@@ -6,14 +6,14 @@
 
 ## 此專案可以幹嘛?
 
-    [x] 修改 File 上方描敘檔的創建日期跟創建者
-    [x] 產生 Objective-C Spam Code
-    [x] 產生 Swift Spam Code
-    [x] 修改圖片名稱
-    [x] 刪除 File 上方描敘檔
-    [x] 支援忽略路徑
-    [x] 活躍的社群
-    [ ] 更改檔案名稱
+[x] 修改 File 上方描敘檔的創建日期跟創建者
+[x] 產生 Objective-C Spam Code
+[x] 產生 Swift Spam Code
+[x] 修改圖片名稱
+[x] 刪除 File 上方描敘檔
+[x] 支援忽略路徑
+[x] 活躍的社群
+[ ] 更改檔案名稱
 
 ## 使用前先安裝
 
