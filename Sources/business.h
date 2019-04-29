@@ -12,8 +12,8 @@
 
 BOOL checkArguments(NSArray<NSString *> *arguments) {
     
-    printf("歡迎使用，請先看過文檔，https://github.com/ttww101/Confuse\n");
-    printf("✅✅✅ 總共有 %lu 個參數\n", (unsigned long)arguments.count);
+    printf("歡迎使用 多洛斯 Dolos，請先看過文檔，https://github.com/5SMNOONMS5/Dolos\n");
+//    printf("✅✅✅ 總共有 %lu 個參數\n", (unsigned long)arguments.count);
     
     if (!arguments || arguments.count <= 1) {
         printf("✅✅✅ 沒有輸入專案檔案根路徑，默認不會對 Pods 跟 Carthage 目錄底下的 file 進行掃描\n");
