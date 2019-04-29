@@ -547,15 +547,21 @@ void generateSwiftSpamCodeFile(NSString *outDirectory,
             
             if (![funcName containsString:@"<"] && ![funcName containsString:@">"]) {
                 
+                NSString *verb = getRandomValue(spamCodeVerb());
+                NSString *noun = getRandomValue(spamCodeNoun());
+                NSString *para = getRandomValue(spamCodePara());
+                NSString *type = getRandomValue(spamCodeType());
+                NSString *appendPara = getRandomValue(spamCodeAppendPara());
+                
                 [methodsString appendFormat:kSwiftMethodTemplate,
                  funcName,
-                 getRandomValue(spamCodeVerb()),
-                 getRandomValue(spamCodeNoun()),
-                 getRandomValue(spamCodePara()),
-                 getRandomValue(spamCodeType()),
-                 getRandomValue(spamCodeAppendPara()),
-                 getRandomValue(spamCodePara()),
-                 getRandomValue(spamCodePara())];
+                 verb,
+                 noun,
+                 para,
+                 type,
+                 appendPara,
+                 para,
+                 para];
                 //                 printf("✅✅✅✅✅✅ methodsString => %s \n", [methodsString UTF8String]);
             }
         }];

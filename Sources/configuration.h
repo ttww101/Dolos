@@ -15,7 +15,7 @@ extension %@ {\n%@\
 
 static NSString *const kSwiftMethodTemplate = @"\
 func %@%@%@(_ %@: %@%@) {\n\
-UserDefaults.standard.setValue(%@, forKey: \"%@\")\n\
+    UserDefaults.standard.setValue(%@, forKey: \"%@\")\n\
 }\n";
 
 NSArray *spamCodeVerb() {

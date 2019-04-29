@@ -26,13 +26,13 @@ BOOL checkArguments(NSArray<NSString *> *arguments) {
     NSArray *contents = [fm contentsOfDirectoryAtPath:path error:&error];
     
     __block BOOL hasXcodeproj = false;
-    
+
     [contents enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([(NSString*)obj containsString:@"xcodeproj"]) {
             hasXcodeproj = true;
         }
     }];
-    
+
     if (!hasXcodeproj) {
         printf("✅✅✅ 請檢查  “根路徑”  位置是否正確\n");
         return false;
