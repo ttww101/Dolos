@@ -49,8 +49,6 @@ int main(int argc, const char * argv[]) {
             
             NSString *argument = arguments[i];
             
-            printf("✅✅✅ 當前將執行這個參數 => %s \n", [argument UTF8String]);
-            
             if (i == 1) {
                 gSourceCodeDir = argument;
                 if (![fm fileExistsAtPath:gSourceCodeDir isDirectory:&isDirectory]) {
@@ -124,7 +122,7 @@ int main(int argc, const char * argv[]) {
                     printf("修改类名前缀参数错误。参数示例：CC>DD，传入参数是：%s\n", string.UTF8String);
                     return 1;
                 }
-                
+            
                 continue;
             }
             
@@ -375,8 +373,6 @@ void generateOCSpamCodeFile(NSString *outDirectory,
         NSString *categoryName = nil;
         NSString *newClassName = [NSString stringWithFormat:@"%@%@%@", noun, className, randomLetter()];
         
-        
-        
         if (impResult.numberOfRanges >= 3) {
             categoryName = [mFileContent substringWithRange:[impResult rangeAtIndex:2]];
         }
@@ -406,16 +402,20 @@ void generateOCSpamCodeFile(NSString *outDirectory,
         
         [matches enumerateObjectsUsingBlock:^(NSTextCheckingResult * _Nonnull matche, NSUInteger idx, BOOL * _Nonnull stop) {
             
-            NSString *symbol = @"+";//[implementation substringWithRange:[matche rangeAtIndex:1]];
+            NSString *noun = getRandomValue(spamCodeNoun());
+            
+            NSString *symbol = @"+";
             NSString *methodName = [[implementation substringWithRange:[matche rangeAtIndex:2]] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
             NSString *newClassMethodName = nil;
             NSString *methodCallName = nil;
             NSString *newClassMethodCallName = nil;
+            
             if ([methodName containsString:@":"]) {
                 // 去掉参数，生成无参数的新名称
                 
                 NSRegularExpression *expression = [NSRegularExpression regularExpressionWithPattern:@"\\b([\\w]+) *:" options:0 error:nil];
                 NSArray<NSTextCheckingResult *> *matches = [expression matchesInString:methodName options:0 range:NSMakeRange(0, methodName.length)];
+                
                 if (matches.count > 0) {
                     NSMutableString *newMethodName = [NSMutableString string];
                     NSMutableString *newClassNewMethodName = [NSMutableString string];
@@ -500,7 +500,7 @@ void generateOCSpamCodeFile(NSString *outDirectory,
         fileName = [NSString stringWithFormat:@"%@.h", newClassName];
         fileContent = [NSString stringWithFormat:kHNewClassFileTemplate, newClassName, hNewClassFileMethodsString];
         [fileContent writeToFile:[newOutDirectory stringByAppendingPathComponent:fileName] atomically:YES encoding:NSUTF8StringEncoding error:nil];
-        
+
         [newClassCallImportString appendFormat:@"#import \"%@\"\n", fileName];
     }];
 }

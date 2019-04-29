@@ -12,7 +12,7 @@
 
 BOOL checkArguments(NSArray<NSString *> *arguments) {
     
-    printf("歡迎使用 多洛斯 Dolos，請先看過文檔，https://github.com/5SMNOONMS5/Dolos\n");
+    printf("歡迎使用 多洛斯 Dolos，請先看過文檔，https://github.com/ttww101/Dolos \n");
 //    printf("✅✅✅ 總共有 %lu 個參數\n", (unsigned long)arguments.count);
     
     if (!arguments || arguments.count <= 1) {
@@ -39,7 +39,7 @@ BOOL checkArguments(NSArray<NSString *> *arguments) {
     }
 
     if (arguments.count <= 2) {
-        printf("✅✅✅ 請至少輸入下面其中一個指令 -spamCode or -handleXcassets or -deleteComments or -replaceFileDescription name \n");
+        printf("✅✅✅ 請至少輸入下面其中一個指令 -spamCode or -handleXcassets or -deleteComments or -replaceFileDescription or \n");
         return false;
     }
     
@@ -55,7 +55,7 @@ BOOL checkArguments(NSArray<NSString *> *arguments) {
     }];
     
     if (isConflict == 2) {
-        printf("✅✅✅ -deleteComments 跟 -replaceFileDescription 不可同時存在，不可能同時要刪除 註釋 又要同時替換 檔案描敘 \n");
+        printf("✅✅✅ -deleteComments 跟 -replaceFileDescription 不可同時存在，不可能同時要刪除 註釋 又要同時替換 檔案描述 \n");
         return false;
     }
     
@@ -69,5 +69,6 @@ NSArray* appendDefaultIgnoreDirectory(NSArray *array) {
     [temp addObject:@"Carthage"];
 
     printf("✅✅✅ spamCode 默認不會對 Pods 跟 Carthage 目錄底下的 file 進行掃描\n");
+    
     return (NSArray*)temp;
 }

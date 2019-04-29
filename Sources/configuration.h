@@ -23,7 +23,8 @@ NSArray *spamCodeVerb() {
 }
 
 NSArray *spamCodeNoun() {
-    return [NSArray arrayWithObjects: @"Sleep", @"Eat", @"Drink", @"Look", @"Listen", @"Run", @"Walk", @"Speak", @"Dance", @"Sing", @"Raise", @"Dream", nil];
+    return [NSArray arrayWithObjects: @"Sleep", @"Eat", @"Drink", @"Look", @"Listen", @"Run", @"Walk", @"Speak", @"Dance", @"Sing", @"Raise", @"Dream",
+            @"Pattern", @"Scream", @"Loud", @"Climb", @"Jump", nil];
 }
 
 NSArray *spamCodePara() {

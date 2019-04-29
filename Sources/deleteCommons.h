@@ -30,5 +30,4 @@ void deleteComments(NSString *directory, NSArray<NSString *> *ignoreDirNames) {
         regularReplacement(fileContent, @"^\\s*\\n",                @"");
         [fileContent writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
     }
-
 }
