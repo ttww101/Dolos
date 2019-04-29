@@ -16,7 +16,7 @@
 ## 使用前先安裝
 
 ```sh
-git clone -b 'release' --single-branch --depth 1 https://github.com/5SMNOONMS5/Dolos.git
+git clone -b 'release' --single-branch --depth 1 git@github.com:ttww101/Dolos.git
 ```
 
 下載下來會有一個執行檔案 Dolos 跟 Readme 
