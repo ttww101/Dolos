@@ -6,7 +6,7 @@
 
 ## 此專案可以幹嘛?
 
-[x] 修改 File 上方描敘檔的創建日期跟創建者
+[x] 替換 File 上方描敘檔的創建日期跟創建者
 [x] 產生 Objective-C Spam Code
 [x] 產生 Swift Spam Code
 [x] 修改圖片名稱
@@ -22,6 +22,15 @@
 
 
 ## 參數說明
+
+
+|  參數名 |   解釋  |  備註 |
+|---|---|---|
+|   -spamCode   |   產生垃圾 code     | |
+|   -handleXcassets    |   修改圖片名稱    |  |
+|   -replaceFileDescription    |   替換 File 上方描敘檔的創建日期跟創建者   |  不可跟-deleteComments 同時使用 |
+|    -deleteComments   |    刪除 File 上方描敘檔  | 不可跟-replaceFileDescription 同時使用 |
+|    -ignoreDirNames   |    被忽略的路徑  | |
 
 
 
