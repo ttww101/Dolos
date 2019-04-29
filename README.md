@@ -28,25 +28,42 @@
 |   -handleXcassets    |   修改圖片名稱    |  |
 |   -replaceFileDescription    |   替換 File 上方描敘檔的創建日期跟創建者   |  不可跟-deleteComments 同時使用 |
 |    -deleteComments   |    刪除 File 上方描敘檔  | 不可跟-replaceFileDescription 同時使用 |
-|    -ignoreDirNames   |    被忽略的路徑  | |
+|    -ignoreDirNames   |    被忽略的路徑  | 是用,分開 ex: Dir1,Dir2 |
 
 
-## 使用範例
+## 使用教學
 
-
-
-```bash 
-
+### 公式
+```sh 
 Dolos <路徑> [-spamCode] [-handleXcassets]  [-replaceFileDescription|-deleteComments] [-ignoreDirNames [Dir1,Dir2]]
-
 ```
 
 
-```bash 
-
-Dolos /Path/MyProject -spamCode -handleXcassets -replaceFileDescription -ignoreDirNames Dir1,Dir2
-
+### 假如我只需要  spamCode
+```sh 
+Dolos /Path/MyProject -spamCode
 ```
+
+### 假如我只需要  spamCode 跟 修改圖片
+```sh 
+Dolos /Path/MyProject -spamCode -handleXcassets
+```
+
+### 假如我只需要  spamCode, 修改圖片, 修改檔案描敘
+```sh 
+Dolos /Path/MyProject -spamCode -handleXcassets -replaceFileDescription
+```
+
+### 假如我只需要  spamCode, 修改圖片, 刪除檔案描敘
+```sh 
+Dolos /Path/MyProject -spamCode -handleXcassets -deleteComments
+```
+
+### 假如我只需要  spamCode, 修改圖片, 刪除檔案描敘, 但是某些資料夾不要
+```sh 
+Dolos /Path/MyProject -spamCode -handleXcassets -deleteComments -ignoreDirNames Dir1,Dir2
+```
+
 
 
 
