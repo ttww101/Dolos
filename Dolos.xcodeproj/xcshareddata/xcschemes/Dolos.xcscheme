@@ -63,7 +63,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "/Users/stephen/Desktop/&#x6b23;&#x5275;/iHealthS/iHealthKitS"
+            argument = "/Users/stephen/Desktop/Sudoku_Am/SudokuAm"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument

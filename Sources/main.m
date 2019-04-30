@@ -340,7 +340,8 @@ void generateOCSpamCodeFile(NSString *outDirectory,
     NSString *hFileContent = [NSString stringWithContentsOfFile:hFilePath encoding:NSUTF8StringEncoding error:nil];
     
     // 准备要引入的文件
-    NSString *fileImportStrings = getImportString(hFileContent, mFileContent);
+    NSString *fileImportStrings = @"#import <UIKit/UIKit.h>";
+//    NSString *fileImportStrings = getImportString(hFileContent, mFileContent);
     
     [matches enumerateObjectsUsingBlock:^(NSTextCheckingResult * _Nonnull impResult, NSUInteger idx, BOOL * _Nonnull stop) {
         
@@ -500,7 +501,6 @@ void generateSwiftSpamCodeFile(NSString *outDirectory,
         
         // 是 class 方法，过掉 （假如是方法的話過濾掉）
         NSString *fullMatchString = [swiftFileContent substringWithRange:classResult.range];
-        
         
         if ([fullMatchString containsString:@"("]) return;
         
