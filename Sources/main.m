@@ -159,29 +159,6 @@ int main(int argc, const char * argv[]) {
                         return 1;
                     }
                 }
-                /*
-                 i++;
-                 if (i < arguments.count) {
-                 gSpamCodeFuncationCallName = arguments[i];
-                 printf("✅✅✅ gSpamCodeFuncationCallName => %s \n", [gSpamCodeFuncationCallName UTF8String]);
-                 NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"[a-zA-Z]+" options:0 error:nil];
-                 if ([regex numberOfMatchesInString:gSpamCodeFuncationCallName options:0 range:NSMakeRange(0, gSpamCodeFuncationCallName.length)] <= 0) {
-                 printf("缺少垃圾代码函数调用名，或参数名\"%s\"不合法(需要字母开头)\n", [gSpamCodeFuncationCallName UTF8String]);
-                 return 1;
-                 }
-                 }
-                 
-                 i++;
-                 if (i < arguments.count) {
-                 gNewClassFuncationCallName = arguments[i];
-                 printf("✅✅✅ gNewClassFuncationCallName => %s \n", [gNewClassFuncationCallName UTF8String]);
-                 NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"[a-zA-Z]+" options:0 error:nil];
-                 if ([regex numberOfMatchesInString:gNewClassFuncationCallName options:0 range:NSMakeRange(0, gNewClassFuncationCallName.length)] <= 0) {
-                 printf("缺少 NewClass 代码函数调用名，或参数名\"%s\"不合法(需要字母开头)\n", [gNewClassFuncationCallName UTF8String]);
-                 return 1;
-                 }
-                 }
-                 */
                 continue;
             }
             
@@ -450,13 +427,19 @@ void generateOCSpamCodeFile(NSString *outDirectory,
                 methodName.length == 0) {
                 return;
             }
-       
+            
             [hFileMethodsString appendFormat:@"+(BOOL)%@%@;\n", methodName, appendPara];
             
             [mFileMethodsString appendFormat:@"+(BOOL)%@%@ {\n", methodName, appendPara];
             [mFileMethodsString appendFormat:@"    return %@ %% %u == 0;\n", noun, arc4random_uniform(50) + 1];
             [mFileMethodsString appendString:@"}\n"];
         }];
+        
+        
+        if (hFileMethodsString.length == 0 ||
+            mFileMethodsString.length == 0 ) {
+            return;
+        }
         
         NSString *newCategoryName;
         switch (type) {
@@ -467,6 +450,8 @@ void generateOCSpamCodeFile(NSString *outDirectory,
             newCategoryName = [NSString stringWithFormat:@"%@%@", categoryName, noun];
             break;
         }
+        
+        className = getRandomValue(spamCodeInterface());
         
         // category m
         NSString *fileName = [NSString stringWithFormat:@"%@+%@.m", className, newCategoryName];

@@ -43,6 +43,10 @@ NSArray *spamCodeName() {
     return [NSArray arrayWithObjects: @"stephen", @"dina", @"joe", @"luke", @"wang", @"mary", @"browen", @"bryan", @"mike", @"candy", @"curry", @"smith", nil];
 }
 
+NSArray *spamCodeInterface() {
+    return [NSArray arrayWithObjects: @"UIViewController", @"UIWebView", @"UILabel", @"UIPickerView", @"UIProgressView", @"UIImageView", @"UITabBar", @"UIAlertView", nil];
+}
+
 /// method 後面所增加的參數
 NSArray *spamCodeOCAppendPara() {
     return [NSArray arrayWithObjects:
