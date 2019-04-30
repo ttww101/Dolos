@@ -22,7 +22,6 @@ void deleteComments(NSString *directory, NSArray<NSString *> *ignoreDirNames);
 void modifyProjectName(NSString *projectDir, NSString *oldName, NSString *newName);
 void modifyClassNamePrefix(NSMutableString *projectContent, NSString *sourceCodeDir, NSArray<NSString *> *ignoreDirNames, NSString *oldName, NSString *newName);
 
-NSString *gSpamCodeFuncationCallName = nil;
 NSString *gNewClassFuncationCallName = nil;
 NSString *gSourceCodeDir = nil;
 

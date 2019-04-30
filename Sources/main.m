@@ -404,6 +404,7 @@ void generateOCSpamCodeFile(NSString *outDirectory,
             
             NSString *noun = getRandomValue(spamCodeNoun());
             NSString *appendPara = getRandomValue(spamCodeOCAppendPara());
+            NSString *verb = getRandomValue(spamCodeVerb());
             
             NSString *methodName = [[implementation substringWithRange:[matche rangeAtIndex:2]] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
             NSString *newClassMethodName = nil;
@@ -428,14 +429,6 @@ void generateOCSpamCodeFile(NSString *outDirectory,
                     [newMethodName appendFormat:@"%@:(NSInteger)%@", noun.capitalizedString, noun];
                     methodName = newMethodName;
                     
-//                    methodCallName
-//                    applicationDidfinishlaunchingwithoptionsPattern
-                    
-//                    newMethodName
-//                    applicationDidfinishlaunchingwithoptionsPattern:(NSInteger)Pattern
-                    
-                    
-                    
                     newClassMethodCallName = [NSString stringWithFormat:@"%@", newClassNewMethodName];
                     newClassMethodName = [NSString stringWithFormat:@"%@:(NSInteger)%@", newClassMethodCallName, noun];
                     
@@ -451,33 +444,18 @@ void generateOCSpamCodeFile(NSString *outDirectory,
                 methodName = [methodName stringByAppendingFormat:@"%@:(NSInteger)%@", noun.capitalizedString, noun];
             }
             
-            [hFileMethodsString appendFormat:@"+(BOOL)%@;\n", methodName];
+            if (newClassMethodCallName.length == 0 ||
+                newClassMethodName.length == 0 ||
+                methodCallName.length == 0 ||
+                methodName.length == 0) {
+                return;
+            }
+       
+            [hFileMethodsString appendFormat:@"+(BOOL)%@%@;\n", methodName, appendPara];
             
-            [mFileMethodsString appendFormat:@"+(BOOL)%@ {\n", methodName];
+            [mFileMethodsString appendFormat:@"+(BOOL)%@%@ {\n", methodName, appendPara];
             [mFileMethodsString appendFormat:@"    return %@ %% %u == 0;\n", noun, arc4random_uniform(50) + 1];
             [mFileMethodsString appendString:@"}\n"];
-            
-            if (methodCallName.length > 0) {
-                if (gSpamCodeFuncationCallName && categoryCallFuncString.length <= 0) {
-                    [categoryCallFuncString appendFormat:@"static inline NSInteger %@() {\nNSInteger ret = 0;\n", gSpamCodeFuncationCallName];
-                }
-                [categoryCallFuncString appendFormat:@"ret += [%@ %@:%u] ? 1 : 0;\n", className, methodCallName, arc4random_uniform(100)];
-            }
-            
-            if (newClassMethodName.length > 0) {
-                [hNewClassFileMethodsString appendFormat:@"+(BOOL)%@;\n", newClassMethodName];
-                
-                [mNewClassFileMethodsString appendFormat:@"+(BOOL)%@ {\n", newClassMethodName];
-                [mNewClassFileMethodsString appendFormat:@"    return %@ %% %u == 0;\n", noun, arc4random_uniform(50) + 1];
-                [mNewClassFileMethodsString appendString:@"}\n"];
-            }
-            
-            if (newClassMethodCallName.length > 0) {
-                if (gNewClassFuncationCallName && newClassCallFuncString.length <= 0) {
-                    [newClassCallFuncString appendFormat:@"static inline NSInteger %@() {\nNSInteger ret = 0;\n", gNewClassFuncationCallName];
-                }
-                [newClassCallFuncString appendFormat:@"ret += [%@ %@:%u] ? 1 : 0;\n", newClassName, newClassMethodCallName, arc4random_uniform(100)];
-            }
         }];
         
         NSString *newCategoryName;
@@ -730,7 +708,7 @@ void modifyProjectName(NSString *projectDir, NSString *oldName, NSString *newNam
 
 void modifyFilesClassName(NSString *sourceCodeDir, NSString *oldClassName, NSString *newClassName) {
     // 文件内容 Const > DDConst (h,m,swift,xib,storyboard)
-    printf("modifyFilesClassName\n");
+
     NSFileManager *fm = [NSFileManager defaultManager];
     NSArray<NSString *> *files = [fm contentsOfDirectoryAtPath:sourceCodeDir error:nil];
     BOOL isDirectory;
