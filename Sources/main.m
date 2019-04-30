@@ -342,7 +342,7 @@ void generateOCSpamCodeFile(NSString *outDirectory,
                             NSMutableString *newClassCallFuncString) {
     
     NSString *mFileContent = [NSString stringWithContentsOfFile:mFilePath encoding:NSUTF8StringEncoding error:nil];
-    
+
     NSString *regexStr;
     switch (type) {
         case GSCSourceTypeClass:
@@ -403,8 +403,8 @@ void generateOCSpamCodeFile(NSString *outDirectory,
         [matches enumerateObjectsUsingBlock:^(NSTextCheckingResult * _Nonnull matche, NSUInteger idx, BOOL * _Nonnull stop) {
             
             NSString *noun = getRandomValue(spamCodeNoun());
+            NSString *appendPara = getRandomValue(spamCodeOCAppendPara());
             
-            NSString *symbol = @"+";
             NSString *methodName = [[implementation substringWithRange:[matche rangeAtIndex:2]] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
             NSString *newClassMethodName = nil;
             NSString *methodCallName = nil;
@@ -412,11 +412,11 @@ void generateOCSpamCodeFile(NSString *outDirectory,
             
             if ([methodName containsString:@":"]) {
                 // 去掉参数，生成无参数的新名称
-                
-                NSRegularExpression *expression = [NSRegularExpression regularExpressionWithPattern:@"\\b([\\w]+) *:" options:0 error:nil];
-                NSArray<NSTextCheckingResult *> *matches = [expression matchesInString:methodName options:0 range:NSMakeRange(0, methodName.length)];
+           
+                NSArray<NSTextCheckingResult *> *matches = getMatchs(@"\\b([\\w]+) *:", methodName, 0);
                 
                 if (matches.count > 0) {
+                    
                     NSMutableString *newMethodName = [NSMutableString string];
                     NSMutableString *newClassNewMethodName = [NSMutableString string];
                     [matches enumerateObjectsUsingBlock:^(NSTextCheckingResult * _Nonnull matche, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -428,12 +428,22 @@ void generateOCSpamCodeFile(NSString *outDirectory,
                     [newMethodName appendFormat:@"%@:(NSInteger)%@", noun.capitalizedString, noun];
                     methodName = newMethodName;
                     
+//                    methodCallName
+//                    applicationDidfinishlaunchingwithoptionsPattern
+                    
+//                    newMethodName
+//                    applicationDidfinishlaunchingwithoptionsPattern:(NSInteger)Pattern
+                    
+                    
+                    
                     newClassMethodCallName = [NSString stringWithFormat:@"%@", newClassNewMethodName];
                     newClassMethodName = [NSString stringWithFormat:@"%@:(NSInteger)%@", newClassMethodCallName, noun];
+                    
                 } else {
                     methodName = [methodName stringByAppendingFormat:@" %@:(NSInteger)%@", noun, noun];
                 }
-            } else {
+            }
+            else {
                 newClassMethodCallName = [NSString stringWithFormat:@"%@%@", randomLetter(), methodName];
                 newClassMethodName = [NSString stringWithFormat:@"%@:(NSInteger)%@", newClassMethodCallName, noun];
                 
@@ -441,9 +451,9 @@ void generateOCSpamCodeFile(NSString *outDirectory,
                 methodName = [methodName stringByAppendingFormat:@"%@:(NSInteger)%@", noun.capitalizedString, noun];
             }
             
-            [hFileMethodsString appendFormat:@"%@ (BOOL)%@;\n", symbol, methodName];
+            [hFileMethodsString appendFormat:@"+(BOOL)%@;\n", methodName];
             
-            [mFileMethodsString appendFormat:@"%@ (BOOL)%@ {\n", symbol, methodName];
+            [mFileMethodsString appendFormat:@"+(BOOL)%@ {\n", methodName];
             [mFileMethodsString appendFormat:@"    return %@ %% %u == 0;\n", noun, arc4random_uniform(50) + 1];
             [mFileMethodsString appendString:@"}\n"];
             
@@ -455,9 +465,9 @@ void generateOCSpamCodeFile(NSString *outDirectory,
             }
             
             if (newClassMethodName.length > 0) {
-                [hNewClassFileMethodsString appendFormat:@"%@ (BOOL)%@;\n", symbol, newClassMethodName];
+                [hNewClassFileMethodsString appendFormat:@"+(BOOL)%@;\n", newClassMethodName];
                 
-                [mNewClassFileMethodsString appendFormat:@"%@ (BOOL)%@ {\n", symbol, newClassMethodName];
+                [mNewClassFileMethodsString appendFormat:@"+(BOOL)%@ {\n", newClassMethodName];
                 [mNewClassFileMethodsString appendFormat:@"    return %@ %% %u == 0;\n", noun, arc4random_uniform(50) + 1];
                 [mNewClassFileMethodsString appendString:@"}\n"];
             }

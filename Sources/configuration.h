@@ -43,5 +43,28 @@ NSArray *spamCodeName() {
     return [NSArray arrayWithObjects: @"stephen", @"dina", @"joe", @"luke", @"wang", @"mary", @"browen", @"bryan", @"mike", @"candy", @"curry", @"smith", nil];
 }
 
+/// method 後面所增加的參數
+NSArray *spamCodeOCAppendPara() {
+    return [NSArray arrayWithObjects:
+            @" parser:(NSXMLParser *)parser",
+            @" contents:(NSArray *)array",
+            @" object:(NSObject *)object",
+            @" sender:(NSValue *)value",
+            @" data:(NSData *)data",
+            @" array:(NSArray *)array object:(NSObject *)object",
+            @" source:(NSData *)data set:(NSSet *)set",
+            @" aszx:(NSObject *)asd a:(NSValue *)value",
+            @" asd:(NSSet *)data asd:(NSArray *)datada",
+            @" dataeraa:(NSValue *)data datdfa:(NSData *)datzxaa",
+            @" dsata:(NSArray *)data dasfgta:(NSObject *)daadgta daasdta:(NSValue *)dawerta",
+            @" dasdgta:(NSSet *)datsdga datscva:(NSData *)dfsfata daerta:(NSValue *)dsdfata",
+            @" wervxb:(NSObject *)dsgata datsfasd:(NSArray *)dataewrf daeraerta:(NSData *)sdfdeqrata",
+            @" datvdsfwra:(NSSet *)datasdwer dawerweta:(NSData *)dawvdfta dasfewta:(NSValue *)dawrhdfta",
+            @" datmra:(NSSet *)datfsga dawezvata:(NSObject *)daafqrgta dasfsdta:(NSArray *)datgfbgwa",
+            nil];
+}
+
+
+
 
 

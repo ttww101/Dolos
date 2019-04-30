@@ -120,12 +120,10 @@ void recursiveDirectory(NSString *directory,
     }
 }
 
-NSArray<NSTextCheckingResult *>* getMatch(NSString *pattern, NSString *fileContent) {
+NSArray<NSTextCheckingResult *>* getMatchs(NSString *pattern, NSString *matchesInString, NSRegularExpressionOptions options) {
     
-    NSRegularExpression *expression = [NSRegularExpression regularExpressionWithPattern:fileContent options:NSRegularExpressionUseUnicodeWordBoundaries error:nil];
-    NSArray<NSTextCheckingResult *> *matches = [expression matchesInString:fileContent options:0 range:NSMakeRange(0, fileContent.length)];
-    
-    return matches;
+    NSRegularExpression *expression = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:nil];
+    return [expression matchesInString:matchesInString options:0 range:NSMakeRange(0, matchesInString.length)];
 }
 
 NSString *getRandomDate() {

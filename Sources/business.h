@@ -16,7 +16,7 @@ BOOL checkArguments(NSArray<NSString *> *arguments) {
 //    printf("✅✅✅ 總共有 %lu 個參數\n", (unsigned long)arguments.count);
     
     if (!arguments || arguments.count <= 1) {
-        printf("✅✅✅ 沒有輸入專案檔案根路徑，默認不會對 Pods 跟 Carthage 目錄底下的 file 進行掃描\n");
+        printf("✅✅✅ 沒有輸入專案檔案源碼路徑\n");
         return false;
     }
     
@@ -33,8 +33,8 @@ BOOL checkArguments(NSArray<NSString *> *arguments) {
         }
     }];
 
-    if (!hasXcodeproj) {
-        printf("✅✅✅ 請檢查  “根路徑”  位置是否正確\n");
+    if (hasXcodeproj) {
+        printf("✅✅✅ 請檢查  “源碼路徑”  位置是否正確\n");
         return false;
     }
 
