@@ -77,7 +77,20 @@ int main(int argc, const char * argv[]) {
                 continue;
             }
             
+            if ([argument isEqualToString:@"-imageCompression"]) {
+                printf("✅✅✅ -imageCompression 暫時不支援 \n");
+                continue;
+            }
+            
+            if ([argument isEqualToString:@"-modifyFunctionName"]) {
+                printf("✅✅✅ -modifyFunctionName 暫時不支援 \n");
+                continue;
+            }
+            
             if ([argument isEqualToString:@"-modifyProjectName"]) {
+                
+                printf("✅✅✅ -modifyProjectName 暫時不支援 \n");
+                continue;
                 
                 NSString *string = arguments[++i];
                 NSArray<NSString *> *names = [string componentsSeparatedByString:@">"];
@@ -96,7 +109,8 @@ int main(int argc, const char * argv[]) {
             
             if ([argument isEqualToString:@"-modifyClassNamePrefix"]) {
                 
-                printf("modifyClassNamePrefix");
+                printf("✅✅✅ -modifyClassNamePrefix 暫時不支援 \n");
+                continue;
                 
                 NSString *string = arguments[++i];
                 projectFilePath = [string stringByAppendingPathComponent:@"project.pbxproj"];
@@ -163,7 +177,8 @@ int main(int argc, const char * argv[]) {
             }
             
             if ([argument isEqualToString:@"-ignoreDirNames"]) {
-                ignoreDirNames = [arguments[++i] componentsSeparatedByString:@","];
+                printf("✅✅✅ -ignoreDirNames 暫時不支援 \n");
+//                ignoreDirNames = [arguments[++i] componentsSeparatedByString:@","];
                 continue;
             }
         }

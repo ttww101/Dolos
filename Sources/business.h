@@ -12,8 +12,7 @@
 
 BOOL checkArguments(NSArray<NSString *> *arguments) {
     
-    printf("歡迎使用 多洛斯 Dolos 1.0.0.3 \n 。請先看過文檔，https://github.com/ttww101/Dolos \n");
-//    printf("✅✅✅ 總共有 %lu 個參數\n", (unsigned long)arguments.count);
+    printf("歡迎使用 多洛斯 Dolos 1.0.0.4\n 。請先看過文檔，https://github.com/ttww101/Dolos \n");
     
     if (!arguments || arguments.count <= 1) {
         printf("✅✅✅ 沒有輸入專案檔案源碼路徑\n");
