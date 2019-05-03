@@ -19,7 +19,9 @@ void replaceFileDescription(NSString *directory, NSArray<NSString *> *ignoreDirN
     NSString *newName = getRandomValue(spamCodeName());
     NSString *randomDate = getRandomDate();
     
-    printf("✅✅✅ 即將產生新的描敘黨 %s\n", [[NSString stringWithFormat:@"Created by %@ %@", newName, randomDate] UTF8String]);
+    NSString *newFileDescription = [NSString stringWithFormat:@"//  Created by %@ on %@.", newName, randomDate];
+    
+//    printf("✅✅✅ 即將產生新的描敘黨 %s\n", [[NSString stringWithFormat:@"Created by %@ %@", newName, randomDate] UTF8String]);
     
     newName = [NSString stringWithFormat:@" by %@ on", newName];
     
@@ -33,8 +35,7 @@ void replaceFileDescription(NSString *directory, NSArray<NSString *> *ignoreDirN
         if (![fileName hasSuffix:@".h"] && ![fileName hasSuffix:@".m"] && ![fileName hasSuffix:@".mm"] && ![fileName hasSuffix:@".swift"]) continue;
         NSMutableString *fileContent = [NSMutableString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
         
-        regularReplacement(fileContent, @" *(on).+[$.]", randomDate);
-        regularReplacement(fileContent, @" *(by).+[on]", newName);
+        regularReplacement(fileContent, @"^//.*Created.*by.*on.*", newFileDescription);
         
         [fileContent writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
     }

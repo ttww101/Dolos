@@ -136,11 +136,8 @@ NSString *getRandomDate() {
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy/MM/dd"];
-    NSString *stringFromDate = [formatter stringFromDate:randomDate];
-
-    NSString *newDate = [NSString stringWithFormat:@" on %@.", stringFromDate];
-    
-    return newDate;
+    NSString *stringFromDate = [formatter stringFromDate:randomDate];    
+    return stringFromDate;
 }
 
 

@@ -341,7 +341,6 @@ void generateOCSpamCodeFile(NSString *outDirectory,
     
     // 准备要引入的文件
     NSString *fileImportStrings = @"#import <UIKit/UIKit.h>";
-//    NSString *fileImportStrings = getImportString(hFileContent, mFileContent);
     
     [matches enumerateObjectsUsingBlock:^(NSTextCheckingResult * _Nonnull impResult, NSUInteger idx, BOOL * _Nonnull stop) {
         

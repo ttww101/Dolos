@@ -30,6 +30,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DCBDCF49227BF43200DE5B16 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		DCEC3B3B2276E8720052A276 /* Dolos */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Dolos; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCEC3B4D2276EAB10052A276 /* business.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = business.h; sourceTree = "<group>"; };
 		DCEC3B4E2276EAB10052A276 /* configuration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = configuration.h; sourceTree = "<group>"; };
@@ -57,6 +58,7 @@
 		DCEC3B322276E8720052A276 = {
 			isa = PBXGroup;
 			children = (
+				DCBDCF49227BF43200DE5B16 /* info.plist */,
 				DCEC3B5E2276EBD20052A276 /* README_old.md */,
 				DCEC3B5D2276EB3E0052A276 /* README.md */,
 				DCEC3B4C2276EAB10052A276 /* Sources */,
@@ -272,8 +274,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 6BX657PAD6;
+				INFOPLIST_FILE = "$(SRCROOT)/info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -281,8 +286,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 6BX657PAD6;
+				INFOPLIST_FILE = "$(SRCROOT)/info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
