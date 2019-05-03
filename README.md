@@ -9,9 +9,9 @@
 - [x]  產生 Swift Spam Code
 - [x]  修改圖片名稱
 - [x]  刪除 File 上方描敘檔
-- [x]  支援忽略路徑
+- [ ]  支援忽略路徑
 - [x]  活躍的社群
-- [ ] 更改檔案名稱
+- [ ]  更改檔案名稱
 
 ## 使用前先安裝
 
@@ -41,41 +41,45 @@ cd Dolos
 |   -handleXcassets    |   修改圖片名稱    |  |
 |   -replaceFileDescription    |   替換 File 上方描敘檔的創建日期跟創建者   |  不可跟-deleteComments 同時使用 |
 |    -deleteComments   |    刪除 File 上方描敘檔  | 不可跟-replaceFileDescription 同時使用 |
-|    -ignoreDirNames   |    被忽略的路徑  | 是用,分開 ex: Dir1,Dir2 |
+|    -ignoreDirNames(敬請期待)   |    被忽略的路徑  | 是用,分開 ex: Dir1,Dir2 |
+|    -modifyProjectName(敬請期待)   |    修改專案名稱  |  |
+|    -imageCompression(敬請期待)   |    圖片壓縮  |  |
+|    -modifyFunctionName(敬請期待)   |    修正方法名稱  |  |
 
 
 ## 使用教學
 
-### 公式
-```sh 
-Dolos <路徑> [-spamCode] [-handleXcassets]  [-replaceFileDescription|-deleteComments] [-ignoreDirNames [Dir1,Dir2]]
+### 一鍵使用
+
+```sh
+./Dolos /Path/MyProject -spamCode -handleXcassets -replaceFileDescription
 ```
 
-
-### 假如我只需要  spamCode
+## 使用教學詳細解說
 ```sh 
-Dolos /Path/MyProject -spamCode
+./Dolos <路徑> [-spamCode] [-handleXcassets]  [-replaceFileDescription|-deleteComments] [-ignoreDirNames [Dir1,Dir2]]
 ```
 
-### 假如我只需要  spamCode 跟 修改圖片
+### **假設** 只需要  spamCode
 ```sh 
-Dolos /Path/MyProject -spamCode -handleXcassets
+./Dolos /Path/MyProject -spamCode
 ```
 
-### 假如我只需要  spamCode, 修改圖片, 修改檔案描敘
+### **假設** 只需要  spamCode 跟 修改圖片
 ```sh 
-Dolos /Path/MyProject -spamCode -handleXcassets -replaceFileDescription
+./Dolos /Path/MyProject -spamCode -handleXcassets
 ```
 
-### 假如我只需要  spamCode, 修改圖片, 刪除檔案描敘
+### **假設** 只需要  spamCode, 修改圖片, 修改檔案描敘
 ```sh 
-Dolos /Path/MyProject -spamCode -handleXcassets -deleteComments
+./Dolos /Path/MyProject -spamCode -handleXcassets -replaceFileDescription
 ```
 
-### 假如我只需要  spamCode, 修改圖片, 刪除檔案描敘, 但是某些資料夾不要
+### **假設** 只需要  spamCode, 修改圖片, 刪除檔案描敘
 ```sh 
-Dolos /Path/MyProject -spamCode -handleXcassets -deleteComments -ignoreDirNames Dir1,Dir2
+./Dolos /Path/MyProject -spamCode -handleXcassets -deleteComments
 ```
+
 
 
 
