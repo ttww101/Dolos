@@ -10,7 +10,6 @@
 		DCEC3B552276EAEB0052A276 /* business.h in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3B4D2276EAB10052A276 /* business.h */; };
 		DCEC3B562276EAEB0052A276 /* configuration.h in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3B4E2276EAB10052A276 /* configuration.h */; };
 		DCEC3B572276EAEB0052A276 /* deleteCommons.h in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3B4F2276EAB10052A276 /* deleteCommons.h */; };
-		DCEC3B582276EAEB0052A276 /* handleAssest.h in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3B502276EAB10052A276 /* handleAssest.h */; };
 		DCEC3B592276EAEB0052A276 /* helper.h in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3B512276EAB10052A276 /* helper.h */; };
 		DCEC3B5A2276EAEB0052A276 /* main.h in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3B522276EAB10052A276 /* main.h */; };
 		DCEC3B5B2276EAEB0052A276 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEC3B532276EAB10052A276 /* main.m */; };
@@ -30,18 +29,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DC53BE212293F18C00F9B916 /* handleAssest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = handleAssest.h; sourceTree = "<group>"; };
 		DCBDCF49227BF43200DE5B16 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		DCEC3B3B2276E8720052A276 /* Dolos */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Dolos; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCEC3B4D2276EAB10052A276 /* business.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = business.h; sourceTree = "<group>"; };
 		DCEC3B4E2276EAB10052A276 /* configuration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = configuration.h; sourceTree = "<group>"; };
 		DCEC3B4F2276EAB10052A276 /* deleteCommons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = deleteCommons.h; sourceTree = "<group>"; };
-		DCEC3B502276EAB10052A276 /* handleAssest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = handleAssest.h; sourceTree = "<group>"; };
 		DCEC3B512276EAB10052A276 /* helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = helper.h; sourceTree = "<group>"; };
 		DCEC3B522276EAB10052A276 /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
 		DCEC3B532276EAB10052A276 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DCEC3B542276EAB10052A276 /* replaceFileDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = replaceFileDescription.h; sourceTree = "<group>"; };
 		DCEC3B5D2276EB3E0052A276 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		DCEC3B5E2276EBD20052A276 /* README_old.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README_old.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +57,6 @@
 			isa = PBXGroup;
 			children = (
 				DCBDCF49227BF43200DE5B16 /* info.plist */,
-				DCEC3B5E2276EBD20052A276 /* README_old.md */,
 				DCEC3B5D2276EB3E0052A276 /* README.md */,
 				DCEC3B4C2276EAB10052A276 /* Sources */,
 				DCEC3B3C2276E8720052A276 /* Products */,
@@ -80,7 +77,7 @@
 				DCEC3B4D2276EAB10052A276 /* business.h */,
 				DCEC3B4E2276EAB10052A276 /* configuration.h */,
 				DCEC3B4F2276EAB10052A276 /* deleteCommons.h */,
-				DCEC3B502276EAB10052A276 /* handleAssest.h */,
+				DC53BE212293F18C00F9B916 /* handleAssest.h */,
 				DCEC3B512276EAB10052A276 /* helper.h */,
 				DCEC3B522276EAB10052A276 /* main.h */,
 				DCEC3B532276EAB10052A276 /* main.m */,
@@ -148,7 +145,6 @@
 				DCEC3B552276EAEB0052A276 /* business.h in Sources */,
 				DCEC3B562276EAEB0052A276 /* configuration.h in Sources */,
 				DCEC3B572276EAEB0052A276 /* deleteCommons.h in Sources */,
-				DCEC3B582276EAEB0052A276 /* handleAssest.h in Sources */,
 				DCEC3B592276EAEB0052A276 /* helper.h in Sources */,
 				DCEC3B5A2276EAEB0052A276 /* main.h in Sources */,
 				DCEC3B5B2276EAEB0052A276 /* main.m in Sources */,
@@ -273,14 +269,11 @@
 		DCEC3B432276E8720052A276 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 3XQV2MF6TV;
 				INFOPLIST_FILE = "$(SRCROOT)/info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xin.dolos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -288,14 +281,11 @@
 		DCEC3B442276E8720052A276 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 3XQV2MF6TV;
 				INFOPLIST_FILE = "$(SRCROOT)/info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xin.dolos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
