@@ -80,7 +80,11 @@ cd Dolos
 ./Dolos /Path/MyProject -spamCode -handleXcassets -deleteComments
 ```
 
+## Troubleshooting
 
+如果出現此問題，請聯繫開發者，這是因為帳號被鎖，憑證被封所導致的問題
+
+![](Images/problems_1.png)
 
 
 

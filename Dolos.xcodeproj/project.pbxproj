@@ -273,11 +273,14 @@
 		DCEC3B432276E8720052A276 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 11;
-				DEVELOPMENT_TEAM = 6BX657PAD6;
+				DEVELOPMENT_TEAM = 3XQV2MF6TV;
 				INFOPLIST_FILE = "$(SRCROOT)/info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xin.dolos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -285,11 +288,14 @@
 		DCEC3B442276E8720052A276 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 11;
-				DEVELOPMENT_TEAM = 6BX657PAD6;
+				DEVELOPMENT_TEAM = 3XQV2MF6TV;
 				INFOPLIST_FILE = "$(SRCROOT)/info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xin.dolos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
